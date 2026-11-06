@@ -15,7 +15,21 @@ def get_character_count(book_text):
        else:
             characters[char] += 1
 
-   return characters
+   order_characters(characters)
+
+
+def sort_on(character : tuple[str, int]) -> int:
+    return character[1]
+
+
+
+def order_characters(data):
+    unordered_characters = []
+    for character in data:
+        y = (character, data[character])
+        unordered_characters.append(y)
+    print(sorted(unordered_characters, reverse=True, key=sort_on))
+    
 
    
         
