@@ -1,6 +1,6 @@
 def get_word_count(book_text):
     words = book_text.split()
-    return f"Found {len(words)} total words"
+    return len(words)
 
     
 def get_character_count(book_text):
@@ -15,7 +15,7 @@ def get_character_count(book_text):
        else:
             characters[char] += 1
 
-   order_characters(characters)
+   return order_characters(characters)
 
 
 def sort_on(character : tuple[str, int]) -> int:
@@ -28,7 +28,7 @@ def order_characters(data):
     for character in data:
         y = (character, data[character])
         unordered_characters.append(y)
-    print(sorted(unordered_characters, reverse=True, key=sort_on))
+    return sorted(unordered_characters, reverse=True, key=sort_on)
     
 
    
